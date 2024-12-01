@@ -220,7 +220,8 @@ def evaluate_round_winner(currRound):
                 currRound + 1} is '{round_winner_name}' with {round_winner_score} points!\n"
         broadcast_message(round_winner_message)
         broadcast_message("The Next Round Will Start Within 20 Seconds..🔥")
-        time.sleep(20)
+        print("  The Next Round Will Start Within 20 Seconds..")
+        time.sleep(2)
     else:  # final winner
         broadcast_message(f"\n🎉 End of The Final Round! 🎉\nThe winner of the final round is '{
                           round_winner_name}' with {round_winner_score} points!\n")
@@ -337,10 +338,6 @@ def checkAnswers_UpdateScores(SubmittedAnswers, CorrectAnswer):
         response = response_data['response']
         playerName = game_players[playerAddress]['name']
 
-       # Log player answers and response times.
-        print(f"Player ({game_players[playerAddress]['name']}) answered: ({
-              response}) in ({response_data['time']:.2f}) seconds")
-
         if response is None:  # If there is no answer submitted ->  show the "Time's up!" message
             result = ""
             game_players[playerAddress]['connection'].send(
@@ -380,6 +377,16 @@ def checkAnswers_UpdateScores(SubmittedAnswers, CorrectAnswer):
         game_players[playerAddress]['connection'].send(result.encode())
         game_players[playerAddress]['connection'].send(
             f"Your current score: {game_players[playerAddress]['score']}\n".encode())
+
+        # Check if the answer is correct or not
+        if response.lower() == CorrectAnswer.lower():
+            answer_status = "✅ Correct!"
+        else:
+            answer_status = "❌ Incorrect"
+
+# Log player answers, response times, and correctness
+        print(f"Player ({game_players[playerAddress]['name']}) answered: ({
+              response}) in ({response_data['time']:.2f}) seconds - {answer_status}")
 
     showClientsCurrScore()     # show the current scores to all game players (clients)
 
