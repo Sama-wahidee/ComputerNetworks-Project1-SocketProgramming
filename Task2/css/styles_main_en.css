@@ -1,0 +1,180 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffeef2; /* Light pink background */
+    color: #e63946; /* Neutral text color */
+}
+
+/* Header Styling */
+header {
+    background-color: #f77f98; /* Light red for the header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Team Section Styling */
+.team-section {
+    padding: 40px;
+    text-align: center;
+}
+
+h4 {
+    font-style: italic;
+}
+
+h4 {
+    color: #e63946;
+    font-style: italic;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px; /* Increase the width of the box */
+    text-align: center;
+    transition: transform 0.2s;
+    display: inline-block; /* Prevent the box from stretching vertically */
+    overflow: hidden; /* Ensure no overflowing content */
+}
+
+.team-box:hover {
+    transform: scale(1.05); /* Slightly enlarge box on hover */
+}
+
+/* Image Styling */
+.team-box img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 15px;
+    max-width: 100%; /* Prevent stretching */
+    max-height: 100%; /* Prevent stretching */
+}
+
+/* ID Styling */
+.team-box .id {
+    color: #f77f98; /* Blue color for the ID text */
+    font-weight: bold; /* Make the ID stand out */
+}
+
+/* Paragraph Styling */
+.team-box p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #666; /* Subtle text color for descriptions */
+}
+
+.team-box h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #e63946; /* Matches the header for consistency */
+}
+
+/* Concept Section Styling */
+.concept-section {
+    padding: 40px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 1200px; /* Increased max width to make the section wider */
+}
+
+/* Title outside the box */
+.concept-title {
+    color: #e63946;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+/* Box styling */
+.concept-box {
+    background-color: #fff; /* White background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1200px; /* Increased max-width */
+    width: 100%; /* Ensure the box takes up the full width within the max-width */
+}
+
+/* Image inside the box */
+.concept-image {
+    float: right; /* Align the image to the right */
+    margin: 0 0 20px 20px; /* Add spacing around the image */
+    max-width: 35%; /* Further reduced image width for even more space for text */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds depth to the image */
+}
+
+/* Text inside the box */
+.concept-box p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Subheadings inside the box */
+.concept-box h3 {
+    color: #f77f98; /* A complementary shade to maintain harmony */
+    margin-top: 20px;
+}
+
+/* Lists inside the box */
+.concept-box ul, .concept-box ol {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.concept-box ul li, .concept-box ol li {
+    margin: 10px 0;
+    font-size: 0.95em;
+    color: #666; /* Darker for readability */
+}
+
+/* Highlight title styling */
+.highlight-title {
+    color: #0073e6; /* Blue color for emphasis */
+    font-weight: bold; /* Make the text bold */
+    /* Slightly larger font size */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Optional: Ensures the image stays responsive */
+    height: auto;    /* Optional: Maintains aspect ratio */
+}
+
+
+/* Styling for Arabic link */
+.arabic-link {
+    float: left;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #e63946;
+    text-decoration: none;
+}
+
+
+.arabic-link:hover {
+    color: #f77f98; /* Change color on hover */
+    text-decoration: underline;
+}

@@ -1,0 +1,118 @@
+/* General Page Styling */
+body {
+    font-family: 'Tajawal', sans-serif; /* Arabic-friendly font */
+    background-color: #ffeef2; /* Light pink background */
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    direction: rtl; /* Right to Left text direction */
+    text-align: right; /* Right-aligned text */
+}
+
+/* Top-right link */
+.top-right-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #f77f98;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* Layout styling */
+.left-half, .right-half {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-half {
+    background-color: #fff; /* White background for form */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.right-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form styling */
+.image-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-form h2 {
+    font-size: 1.5rem;
+    color: #e63946; /* Cute pink heading */
+}
+
+.image-input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #f8b4c8;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.image-input:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 10px #f8b4c8;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #e63946; /* Vibrant pink */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #f77f98; /* Softer pink */
+    transform: scale(1.1);
+}
+
+/* Image/Video container styling */
+.file-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.file-container img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.center-text .button {
+    padding: 15px 25px;
+    background-color: #f77f98; /* Light pink */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.center-text .button:hover {
+    background-color: #e63946;
+    transform: scale(1.1);
+}

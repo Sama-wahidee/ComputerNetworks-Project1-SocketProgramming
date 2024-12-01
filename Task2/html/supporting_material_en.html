@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Supporting Materials</title>
+    <link rel="stylesheet" href="/css/style_en.css">
+</head>
+<body>
+<a class="top-right-link" href="supporting_material_ar.html"> || ARABIC || </a>
+
+<div class="left-half">
+    <!-- Form to input file name -->
+    <div class="image-form">
+        <form id="fileForm">
+            <h2>Request an Image or Video</h2>
+            <input type="text" id="fileName" class="image-input" placeholder="Enter the file name (e.g., http_protocol)">
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Container to display the image or video -->
+    <div class="file-container" id="fileContainer"></div>
+</div>
+
+<div class="right-half">
+    <div class="center-text">
+        <button class="button" onclick="window.location.href='main_en.html'">Go Back To The Main Page</button>
+    </div>
+</div>
+
+<script>
+    function handleFileRequest(event) {
+        event.preventDefault(); // Prevent default form submission
+        const fileName = document.getElementById('fileName').value.trim();
+
+        if (fileName) {
+            const serverUrl = `http://127.0.0.1:5698/imgs/${encodeURIComponent(fileName)}`;  // Adjusted URL format
+
+            // Check if the file exists using fetch
+            fetch(serverUrl, { method: 'GET' })
+                .then(response => {
+                    const fileContainer = document.getElementById('fileContainer');
+                    const fileExtension = fileName.split('.').pop().toLowerCase();
+
+                    if (response.status === 200) {
+                        // Serve the image or video
+                        if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
+                            fileContainer.innerHTML = `<img src="${serverUrl}" alt="${fileName}">`;
+                        } else if (['mp4', 'avi', 'mov'].includes(fileExtension)) {
+                            fileContainer.innerHTML = `<video controls><source src="${serverUrl}" type="video/${fileExtension}">Your browser does not support the video tag.</video>`;
+                        } else {
+                            fileContainer.innerHTML = '<p style="color: red;">Unsupported file type.</p>';
+                        }
+                    } else if (response.status === 404) {
+                        // Redirect if the file is not found
+                        const searchUrl = fileName.endsWith('.mp4') || fileName.endsWith('.avi')
+                            ? `https://www.youtube.com/results?search_query=${encodeURIComponent(fileName)}`
+                            : `https://www.google.com/search?q=${encodeURIComponent(fileName)}&tbm=isch`;
+
+                        window.location.href = searchUrl;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            alert('Please enter a valid file name.');
+        }
+    }
+
+    document.getElementById('fileForm').addEventListener('submit', handleFileRequest);
+</script>
+
+</body>
+</html>
